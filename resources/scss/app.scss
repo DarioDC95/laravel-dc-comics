@@ -1,9 +1,10 @@
-@use 'partials/_header.scss' as *;
-@use 'partials/_jambotron.scss' as *;
-@use 'partials/_mainHomepage.scss' as *;
-@use 'partials/_mainComics.scss' as *;
+@use 'partials/header' as *;
+@use 'partials/jambotron' as *;
+@use 'partials/mainHomepage' as *;
+@use 'partials/mainComics' as *;
 @use 'partials/mainSingleComic' as *;
-@use 'partials/_footer.scss' as *;
+@use 'partials/mainFormNewComic' as *;
+@use 'partials/footer' as *;
 @import '~bootstrap/scss/bootstrap';
 
 * {

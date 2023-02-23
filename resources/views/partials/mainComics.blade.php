@@ -8,11 +8,16 @@
                         <div class="current-series">CURRENT SERIES</div>
                     </div>
                 </div>
+                <div class="mycol">
+                    <div class="mycard">
+                        <a href="{{ Route('comics.create') }}" class="underline-none current-series new-comic">INSERT NEW COMIC</a>
+                    </div>
+                </div>
             </div>
             <div class="myrow px-4">
-                @foreach ($comics as $key => $item)   
+                @foreach ($comics as $item)   
                     <div class="mycol-sm">
-                        <a class="underline-none" href="{{ route('comics.show', ['comic' => $key]) }}">
+                        <a class="underline-none" href="{{ route('comics.show', ['comic' => $item['id']]) }}">
                             @include('partials.subPartials.cardMainComics')
                         </a>
                     </div>

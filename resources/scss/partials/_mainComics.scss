@@ -29,6 +29,17 @@
                         transform: translateY(-50%);
                         margin-bottom: 25px;
                     }
+
+                    .current-series.new-comic {
+                        border-radius: 10px;
+                        background-color: $bg-violet;
+                        color: $color-lightgreen;
+
+                        &:hover {
+                            color: $color-grey;
+                            background-color: $bg-whitesmoke;
+                        }
+                    }
                 }
 
                 .mycol-sm {

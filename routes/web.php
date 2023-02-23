@@ -17,6 +17,6 @@ use App\Http\Controllers\PagesController as PagesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('home-page');
 
 Route::resource('comics', ComicController::class);

@@ -29,7 +29,9 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        $nav = config('db.menu');
+        
+        return view('newComic', compact('nav'));
     }
 
     /**
@@ -40,7 +42,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
     }
 
     /**
@@ -53,7 +55,7 @@ class ComicController extends Controller
     {
         $nav = config('db.menu');
         $icons = config('db.icons');
-        $singleComic = Comic::find($id);
+        $singleComic = Comic::findOrFail($id);
 
         return view('singleComic', compact('nav', 'icons', 'singleComic'));
     }

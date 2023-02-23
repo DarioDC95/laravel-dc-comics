@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="mycard d-flex align-items-center justify-content-center">
-                            <h1 class="m-0">BENVENUTO IN COMICS</h1>
+                            <h1 class="m-0">BENVENUTO IN DC COMICS</h1>
                         </div>
                     </div>
                 </div>

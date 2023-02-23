@@ -2,7 +2,9 @@
     <div class="mycontainer">
         <div class="myrow">
             <div class="mycol-md">
-                <img src="{{Vite::asset('resources/img/images/dc-logo.png')}}" alt="Logo Favicon">
+                <a href="{{ route('home-page') }}">
+                    <img src="{{Vite::asset('resources/img/images/dc-logo.png')}}" alt="Logo Favicon">
+                </a>
             </div>
             <div class="mycol-lg">
                 <nav>
