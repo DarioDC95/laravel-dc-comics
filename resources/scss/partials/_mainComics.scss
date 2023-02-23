@@ -1,0 +1,128 @@
+@use 'variables' as *;
+@use 'mixins'as *;
+
+.main-comics {
+    font-weight: 600;
+    color: $color-white;
+    background-color: $bg-black;
+
+    .main-content {
+        padding-bottom: 20px;
+
+        .mycontainer {
+            @include container-mix;
+
+            .myrow {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+
+                .mycol {
+
+                    .current-series {
+                        background-color: $bg-icon-services;
+                        display: inline-block;
+                        white-space: nowrap;
+                        padding: 10px 30px;
+                        font-size: 20px;
+                        transform: translateY(-50%);
+                        margin-bottom: 25px;
+                    }
+                }
+
+                .mycol-sm {
+
+                    a {
+                        color: $color-white;
+                    }
+    
+                    .mycard {
+                        width: 180px;
+                        margin-bottom: 40px;
+                        text-transform: uppercase;
+                    
+                        .container-img {
+                            margin-bottom: 20px;
+                            height: 180px;
+                            overflow: hidden;
+                    
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .button {
+                text-align: center;
+
+                button {
+                    padding: 15px 20px ;
+                    border: 3px solid $color-blue;
+                    background-color: $color-blue;
+                    font-weight: 600;
+                    font-size: 17px;
+                    color: $color-white;
+                    cursor: pointer;
+    
+                    &:hover {
+                        border: 3px solid $color-white;
+                        color: $color-white;
+                    }
+    
+                    &:active {
+                        color: $bg-black;
+                        background-color: $color-white;
+                        border: 3px solid $color-blue;
+                    }
+                }
+            }
+        }
+    }
+    
+    .icon-services {
+        background-color: $bg-icon-services;
+        padding: 50px 0;
+        position: relative;
+        z-index: 5;
+    
+        .mycontainer {
+            @include container-mix;
+        
+            .myrow {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+    
+                .mycol-sm {
+                    display: flex;
+                    align-items: center;
+    
+                    .mycard {
+                        display: flex;
+                        align-items: center;
+    
+                        div {
+    
+                            span {
+                                font-size: 14px;
+                                color: $color-white;
+                            }
+                        }
+                        
+                        img {
+                            height: 60px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+    
+                .mycol-sm:last-child img {
+                    height: 45px;
+                }
+            }
+        }
+    }
+}

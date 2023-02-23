@@ -1,0 +1,9 @@
+@use 'variables' as *;
+@use 'mixins'as *;
+
+.jumbotron {
+    height: 400px;
+    background-image: url('../img/images/jumbotron.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} 

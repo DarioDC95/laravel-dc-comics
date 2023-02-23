@@ -1,0 +1,129 @@
+@use 'variables' as *;
+@use 'mixins'as *;
+
+.footer-links {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    background-image: url('../img/images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    .mycontainer {
+        @include container-mix;
+
+        .myrow {
+            display: flex;
+            justify-content: space-between;
+
+            .mycol-lg {
+                width: 50%;
+                position: relative;
+                
+                .mycard{
+
+                    img {
+                        position: absolute;
+                        top: -125px;
+                        right: 0;
+                        z-index: 1;
+                        width: 800px;
+                    }
+
+                    .dc-comics {
+                        margin-bottom: 20px
+                    }
+
+                    .title {
+                        color: $color-white;
+                        font-size: 20px;
+                        font-weight: 500;
+                        margin-bottom: 15px;
+                    }
+
+                    ul {
+                        list-style-type: none;
+
+                        li {
+
+                            a {
+                                color: $color-grey;
+                                font-size: 13px;
+
+                                &:hover {
+                                    color: $color-white;;
+                                }
+                            }
+                        }
+                    }
+
+                    .privacy-rights {
+                        color: $color-grey;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+.sign-up {
+    padding: 30px 0;
+    background-color: $bg-brown;
+
+    .mycontainer {
+        @include container-mix;
+
+        .myrow {
+            display: flex;
+            justify-content: space-between;
+
+            .mycol {
+                display: flex;
+                align-items: center;
+
+                .mycard {
+                    display: flex;
+                    align-items: center;
+                    
+                    button {
+                        padding: 15px 20px ;
+                        border: 3px solid $color-blue;
+                        background-color: transparent;
+                        font-weight: 600;
+                        font-size: 17px;
+                        color: $color-white;
+                        cursor: pointer;
+        
+                        &:hover {
+                            border: 3px solid $color-white;
+                            color: $color-blue;
+                        }
+        
+                        &:active {
+                            color: $color-white;
+                            background-color: $bg-black;
+                            border: 3px solid $color-blue;
+                        }
+                    }
+
+                    .follow-us {
+                        color: $color-blue;
+                        font-size: 17px;
+                        font-weight: 600;
+                        margin-right: 30px;
+                    }
+
+                    ul {
+                        display: flex;
+                        list-style-type: none;
+
+                        a:hover {
+                            filter: brightness(200%);
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
