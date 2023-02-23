@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Immagine</label>
-                                            <input class="form-control" type="file" name="image" placeholder="inserici l'immagine">
+                                            <input class="form-control" type="file" name="thumb" placeholder="inserici l'immagine">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Descrizione</label>
@@ -30,17 +30,17 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Prezzo</label>
-                                            <input type="text" class="form-control" name="price" placeholder="inserici il prezzo">
+                                            <input type="text" class="form-control" name="price" placeholder="inserici il prezzo (MAX 4 digit and 2 decimals)">
                                         </div>
                                         <div>
                                             <label class="form-label">Seleziona il tipo</label>
                                             <div class="d-flex">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="type-option" value="comic book">
+                                                    <input class="form-check-input" type="radio" name="type" value="comic book">
                                                     <label class="form-check-label">comic book</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="type-option" value="graphic novel">
+                                                    <input class="form-check-input" type="radio" name="type" value="graphic novel">
                                                     <label class="form-check-label">graphic novel</label>
                                                 </div>
                                             </div>
@@ -54,16 +54,16 @@
                                             <input type="text" class="form-control" name="series" placeholder="inserici la serie">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Inserisci la data</label>
-                                            <input type="text" class="form-control" name="date" placeholder="inserici la data (Anno-Mese-Giorno)">
+                                            <label class="form-label">Inserisci la data di inizio vendita</label>
+                                            <input type="date" class="form-control" name="sale_date" placeholder="inserici la data (Anno-Mese-Giorno)">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Inserisci gli artisti</label>
-                                            <textarea class="form-control" rows="3" name="description" placeholder="inserici gli artisti"></textarea>
+                                            <textarea class="form-control" rows="3" name="artists" placeholder="inserici gli artisti"></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Inserisci gli scrittori</label>
-                                            <textarea class="form-control" rows="3" name="description" placeholder="inserisci gli scrittori"></textarea>
+                                            <textarea class="form-control" rows="3" name="writers" placeholder="inserisci gli scrittori"></textarea>
                                         </div>
                                     </div>
                                 </div>
