@@ -21,6 +21,10 @@
                 color: $color-white;
                 bottom: -50px;
 
+                img {
+                    width: 200px;
+                }
+
                 .top-label, .bottom-label {
                     position: absolute;
                     background-color: $bg-violet;

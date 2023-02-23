@@ -27,7 +27,7 @@
                             <h2 class="text-uppercase">{{ $singleComic['title'] }}</h2>
                             <div class="d-flex w-100 mb-3">
                                 <div class="price d-flex justify-content-between">
-                                    <p class="m-0 fw-bold">U.S. Price: <span>{{ $singleComic['price'] }}</span></p>
+                                    <p class="m-0 fw-bold">U.S. Price: <span>${{ $singleComic['price'] }}</span></p>
                                     <p class="fw-bold m-0">AVAILABLE</p>
                                 </div>
                                 <div class="availability fw-bold">
@@ -75,7 +75,7 @@
                             </div>
                             <div class="description d-flex py-2 border-bottom">
                                 <p class="mykey m-0">U.S. Price:</p>
-                                <p class="myvalue black m-0">{{ $singleComic['price'] }}</p>
+                                <p class="myvalue black m-0">$ {{ $singleComic['price'] }}</p>
                             </div>
                             <div class="description d-flex py-2 border-bottom">
                                 <p class="mykey m-0">On Sale Date:</p>
