@@ -13,7 +13,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('homePage');
+        $nav = config('db.menu');
+
+        return view('homePage', compact('nav'));
     }
 
     /**

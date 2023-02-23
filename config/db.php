@@ -143,7 +143,7 @@ return [
         ],
         [
             "label" => 'COMICS',
-            "url" => 'comics_page'
+            "url" => 'comics.index'
         ],
         [
             "label" => 'MOVIES',
