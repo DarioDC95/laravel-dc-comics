@@ -4,12 +4,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">
-                        <form action="{{ route('comics.store') }}" method="POST" class="card p-4">
+                        <form action="{{ route('comics.update', ['comic' => $singleComic->id]) }}" method="POST" class="card p-4">
                             @csrf
+                            @method('PUT')
                             <div class="row mb-5">
                                 <div class="col">
                                     <div class="mycard text-center">
-                                        <h3>Compila il Form per inserire un nuovo Comic</h3>
+                                        <h5>Compila il Form per inserire modificare il Comic</h5>
+                                        <h1>{{ var_dump(old('title')) }}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -18,7 +20,7 @@
                                     <div class="mycard">
                                         <div class="mb-3">
                                             <label class="form-label">Titolo</label>
-                                            <input type="text" class="form-control" name="title" placeholder="inserici il titolo">
+                                            <input type="text" class="form-control" name="title" placeholder="inserici il titolo" value="{{ old('title') ? '' : $singleComic->title }}">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Immagine</label>
@@ -72,7 +74,7 @@
                                 <div class="col">
                                     <div class="mycard text-center">
                                         <button type="reset" class="btn btn-secondary mb-3">Reset</button>
-                                        <button type="submit" class="btn btn-primary mb-3">Conferma Comic</button>
+                                        <button type="submit" class="btn btn-primary mb-3">Conferma la modifica</button>
                                     </div>
                                 </div>
                             </div>

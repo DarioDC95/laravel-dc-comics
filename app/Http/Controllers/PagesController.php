@@ -15,7 +15,7 @@ class PagesController extends Controller
     {
         $nav = config('db.menu');
 
-        return view('homePage', compact('nav'));
+        return view('pages.homePage', compact('nav'));
     }
 
     /**

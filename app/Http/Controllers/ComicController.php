@@ -19,7 +19,7 @@ class ComicController extends Controller
         $icons = config('db.icons');
         $comics = Comic::all();
 
-        return view('comics', compact('nav', 'icons', 'comics'));
+        return view('comics.comics', compact('nav', 'icons', 'comics'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ComicController extends Controller
     {
         $nav = config('db.menu');
         
-        return view('newComic', compact('nav'));
+        return view('comics.newComic', compact('nav'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ComicController extends Controller
         $icons = config('db.icons');
         $singleComic = Comic::findOrFail($id);
 
-        return view('singleComic', compact('nav', 'icons', 'singleComic'));
+        return view('comics.singleComic', compact('nav', 'icons', 'singleComic'));
     }
 
     /**
@@ -83,7 +83,10 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nav = config('db.menu');
+        $singleComic = Comic::findOrFail($id);
+
+        return (view('comics.editComic', compact('singleComic', 'nav')));
     }
 
     /**
@@ -95,7 +98,21 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $editComic = Comic::findOrFail($id);
+
+        $editComic->title = $request['title'];
+        $editComic->description = $request['description'];
+        $editComic->thumb = $request['thumb'];
+        $editComic->price = $request['price'];
+        $editComic->series = $request['series'];
+        $editComic->sale_date = $request['sale_date'];
+        $editComic->type = $request['type'];
+        $editComic->artists = $request['artists'];
+        $editComic->writers = $request['writers'];
+
+        $editComic->update();
+
+        return redirect()->route('comics.show', ['comic' => $editComic->id]);
     }
 
     /**

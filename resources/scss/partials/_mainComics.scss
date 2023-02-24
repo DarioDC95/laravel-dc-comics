@@ -54,13 +54,26 @@
                         text-transform: uppercase;
                     
                         .container-img {
-                            margin-bottom: 20px;
                             height: 180px;
                             overflow: hidden;
                     
                             img {
                                 display: block;
                             }
+                        }
+                        
+                        .edit-button {
+                            position: absolute;
+                            bottom: 0;
+                            left: 15px;
+                            transform: translateY(50%);
+                        }
+
+                        .delete-button {
+                            position: absolute;
+                            bottom: 0;
+                            right: 15px;
+                            transform: translateY(50%);
                         }
                     }
                 }
