@@ -100,17 +100,19 @@ class ComicController extends Controller
     {
         $editComic = Comic::findOrFail($id);
 
-        $editComic->title = $request['title'];
-        $editComic->description = $request['description'];
-        $editComic->thumb = $request['thumb'];
-        $editComic->price = $request['price'];
-        $editComic->series = $request['series'];
-        $editComic->sale_date = $request['sale_date'];
-        $editComic->type = $request['type'];
-        $editComic->artists = $request['artists'];
-        $editComic->writers = $request['writers'];
+        // $editComic->title = $request['title'];
+        // $editComic->description = $request['description'];
+        // $editComic->thumb = $request['thumb'];
+        // $editComic->price = $request['price'];
+        // $editComic->series = $request['series'];
+        // $editComic->sale_date = $request['sale_date'];
+        // $editComic->type = $request['type'];
+        // $editComic->artists = $request['artists'];
+        // $editComic->writers = $request['writers'];
 
-        $editComic->update();
+        $form_data = $this->validation($request->all());
+
+        $editComic->update($form_data);
 
         return redirect()->route('comics.show', ['comic' => $editComic->id]);
     }
@@ -132,7 +134,7 @@ class ComicController extends Controller
             'title' => 'required|max:100',
             'description' => 'nullable|max:65535',
             'thumb' => 'nullable|max:65535',
-            'price' => 'required|digits:4|decimals:2',
+            'price' => 'required|between:0, 99.99|decimal:0,2',
             'series' => 'required|max:100',
             'sale_date' => 'required|max:100',
             'type' => 'required|max:50',
@@ -145,8 +147,8 @@ class ComicController extends Controller
             'description.max' => 'La descrizione deve avere massimo :max caratteri',
             'thumb.max' => 'L\'URL deve avere massimo :max caratteri',
             'price.required' => 'Il prezzo è obbligatorio',
-            'price.digits' => 'Il prezzo deve avere al massimo 2 numeri interi',
-            'price.decimals' => 'Il numero deve avere al massimo 2 decimali',
+            'price.digits_between' => 'Il prezzo deve avere al massimo 2 numeri interi',
+            'price.decimal' => 'Il prezzo deve avere al massimo 2 decimali',
             'series.required' => 'La serie è obbligatoria',
             'series.max' => 'La serie deve avere al massimo di :max caratteri',
             'sale_date.required' => 'La data di uscita è obbligatoria',
@@ -156,5 +158,7 @@ class ComicController extends Controller
             'artists.max' => 'Il campo non deve essere più lungo di :max caratteri',
             'writers.max' => 'Il campo non deve essere più lungo di :max caratteri',
         ])->validate();
+
+        return $validator;
     }
 }

@@ -11,6 +11,15 @@
                                 <div class="col">
                                     <div class="mycard text-center">
                                         <h5>Compila il Form per inserire modificare il Comic</h5>
+                                        @if ($errors->any())
+                                            <div>
+                                                <ul>
+                                                    @foreach ( $errors->all() as $error )
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
