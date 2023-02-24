@@ -42,18 +42,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
+        $newComic = $this->validation($request->all());
 
         $newComic = new Comic();
-        $newComic->title = $form_data['title'];
-        $newComic->description = $form_data['description'];
-        $newComic->thumb = $form_data['thumb'];
-        $newComic->price = $form_data['price'];
-        $newComic->series = $form_data['series'];
-        $newComic->sale_date = $form_data['sale_date'];
-        $newComic->type = $form_data['type'];
-        $newComic->artists = $form_data['artists'];
-        $newComic->writers = $form_data['writers'];
+        // $newComic->title = $form_data['title'];
+        // $newComic->description = $form_data['description'];
+        // $newComic->thumb = $form_data['thumb'];
+        // $newComic->price = $form_data['price'];
+        // $newComic->series = $form_data['series'];
+        // $newComic->sale_date = $form_data['sale_date'];
+        // $newComic->type = $form_data['type'];
+        // $newComic->artists = $form_data['artists'];
+        // $newComic->writers = $form_data['writers'];
 
         $newComic->save();
 
@@ -136,7 +136,7 @@ class ComicController extends Controller
             'thumb' => 'nullable|max:65535',
             'price' => 'required|between:0, 99.99|decimal:0,2',
             'series' => 'required|max:100',
-            'sale_date' => 'required|max:100',
+            'sale_date' => 'required',
             'type' => 'required|max:50',
             'artists' => 'nullable|max:65535',
             'writers' => 'nullable|max:65535'
@@ -147,12 +147,11 @@ class ComicController extends Controller
             'description.max' => 'La descrizione deve avere massimo :max caratteri',
             'thumb.max' => 'L\'URL deve avere massimo :max caratteri',
             'price.required' => 'Il prezzo è obbligatorio',
-            'price.digits_between' => 'Il prezzo deve avere al massimo 2 numeri interi',
+            'price.between' => 'Il prezzo deve avere al massimo 2 numeri interi',
             'price.decimal' => 'Il prezzo deve avere al massimo 2 decimali',
             'series.required' => 'La serie è obbligatoria',
             'series.max' => 'La serie deve avere al massimo di :max caratteri',
             'sale_date.required' => 'La data di uscita è obbligatoria',
-            'sale_date.max' => 'La data di uscita deve avere massimo :max caratteri',
             'type.required' => 'Un tipo deve essere selezionato',
             'type.max' => 'Il tipo non deve essere più lungo di :max caratteri',
             'artists.max' => 'Il campo non deve essere più lungo di :max caratteri',

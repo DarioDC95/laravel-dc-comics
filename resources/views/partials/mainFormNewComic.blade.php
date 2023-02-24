@@ -10,6 +10,13 @@
                                 <div class="col">
                                     <div class="mycard text-center">
                                         <h3>Compila il Form per inserire un nuovo Comic</h3>
+                                        @if ($errors->any())
+                                            <div>
+                                                @foreach ( $errors->all() as $error )
+                                                    <div class="text-danger">{{ $error }}</div>
+                                                @endforeach
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -19,18 +26,32 @@
                                         <div class="mb-3">
                                             <label class="form-label">Titolo</label>
                                             <input type="text" class="form-control" name="title" placeholder="inserici il titolo">
+                                            @error('title')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Immagine</label>
                                             <input class="form-control" type="text" name="thumb" placeholder="inserici l'url dell'immagine">
+                                            @error('thumb')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Descrizione</label>
                                             <textarea class="form-control" rows="3" name="description" placeholder="inserici la discrizione"></textarea>
+                                            @error('description')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Prezzo</label>
                                             <input type="text" class="form-control" name="price" placeholder="inserici il prezzo (MAX 4 digit and 2 decimals)">
+                                            @error('price')
+                                                @foreach ($errors->get('price') as $message)  
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @endforeach
+                                            @enderror
                                         </div>
                                         <div>
                                             <label class="form-label">Seleziona il tipo</label>
@@ -44,6 +65,9 @@
                                                     <label class="form-check-label">graphic novel</label>
                                                 </div>
                                             </div>
+                                            @error('type')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -52,18 +76,30 @@
                                         <div class="mb-3">
                                             <label class="form-label">Serie</label>
                                             <input type="text" class="form-control" name="series" placeholder="inserici la serie">
+                                            @error('series')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Inserisci la data di inizio vendita</label>
                                             <input type="date" class="form-control" name="sale_date" placeholder="inserici la data (Anno-Mese-Giorno)">
+                                            @error('sale_date')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Inserisci gli artisti</label>
                                             <textarea class="form-control" rows="3" name="artists" placeholder="inserici gli artisti"></textarea>
+                                            @error('artists')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Inserisci gli scrittori</label>
                                             <textarea class="form-control" rows="3" name="writers" placeholder="inserisci gli scrittori"></textarea>
+                                            @error('writers')
+                                                <div class="text-danger">{{ $message}}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
