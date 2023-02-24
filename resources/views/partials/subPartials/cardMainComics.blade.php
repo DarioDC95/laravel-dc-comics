@@ -7,9 +7,11 @@
             <a href="{{ route('comics.edit', ['comic' => $item['id']]) }}">
                 <button type="button" class="btn btn-warning edit-button"><i class="fa-solid fa-pen-to-square"></i></button>
             </a>
-            <a href="#">
-                <button type="button" class="btn btn-danger delete-button"><i class="fa-solid fa-trash-can"></i></button>
-            </a>
+            <form action="{{ route('comics.destroy', ['comic' => $item['id']]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger delete-button"><i class="fa-solid fa-trash-can"></i></button>
+            </form>
         </div>
         <h6>{{ $item['title'] }}</h6>
     </div>

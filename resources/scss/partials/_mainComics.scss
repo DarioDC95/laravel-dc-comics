@@ -11,12 +11,14 @@
 
         .mycontainer {
             @include container-mix;
+            padding: 0;
 
-            .myrow {
+            .myrow:first-child {
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
                 width: 100%;
+                padding: 0 20px;
 
                 .mycol {
 
@@ -41,8 +43,16 @@
                         }
                     }
                 }
+            }
+
+            .myrow {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
 
                 .mycol-sm {
+                    padding: 0 10px;
 
                     a {
                         color: $color-white;
