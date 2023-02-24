@@ -10,7 +10,7 @@
             <form action="{{ route('comics.destroy', ['comic' => $item['id']]) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger delete-button"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="submit" class="btn btn-danger delete-button confirm-delete-button" data-title="{{ $item['title'] }}"><i class="fa-solid fa-trash-can"></i></button>
             </form>
         </div>
         <h6>{{ $item['title'] }}</h6>

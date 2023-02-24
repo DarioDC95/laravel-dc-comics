@@ -43,3 +43,4 @@
         </div>
     </section>
 </main>
+@include('partials.subPartials.modal')

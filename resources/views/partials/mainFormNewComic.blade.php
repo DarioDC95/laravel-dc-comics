@@ -27,21 +27,21 @@
                                             <label class="form-label">Titolo</label>
                                             <input type="text" class="form-control" name="title" placeholder="inserici il titolo">
                                             @error('title')
-                                                <div class="text-danger">{{ $message}}</div>
+                                                <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Immagine</label>
-                                            <input class="form-control" type="text" name="thumb" placeholder="inserici l'url dell'immagine">
+                                            <input class="form-control" type="text" name="thumb" placeholder="inserisci l'url dell'immagine">
                                             @error('thumb')
-                                                <div class="text-danger">{{ $message}}</div>
+                                                <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Descrizione</label>
                                             <textarea class="form-control" rows="3" name="description" placeholder="inserici la discrizione"></textarea>
                                             @error('description')
-                                                <div class="text-danger">{{ $message}}</div>
+                                                <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="mb-3">

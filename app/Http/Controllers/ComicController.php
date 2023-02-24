@@ -42,9 +42,13 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $newComic = $this->validation($request->all());
+        $data_form = $this->validation($request->all());
 
         $newComic = new Comic();
+        
+        $newComic->fill($data_form);
+        // $form_data = $request->all();
+        
         // $newComic->title = $form_data['title'];
         // $newComic->description = $form_data['description'];
         // $newComic->thumb = $form_data['thumb'];
@@ -143,7 +147,7 @@ class ComicController extends Controller
             'sale_date' => 'required',
             'type' => 'required|max:50',
             'artists' => 'nullable|max:65535',
-            'writers' => 'nullable|max:65535'
+            'writers' => 'nullable|max:65535',
         ], 
         [
             'title.required' => 'Il titolo è obbligatorio',
