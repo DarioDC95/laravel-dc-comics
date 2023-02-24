@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 use App\Models\Comic;
 
 class ComicController extends Controller
@@ -124,5 +124,37 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function validation($data) 
+    {
+        $validator = Validator::make($data, [
+            'title' => 'required|max:100',
+            'description' => 'nullable|max:65535',
+            'thumb' => 'nullable|max:65535',
+            'price' => 'required|digits:4|decimals:2',
+            'series' => 'required|max:100',
+            'sale_date' => 'required|max:100',
+            'type' => 'required|max:50',
+            'artists' => 'nullable|max:65535',
+            'writers' => 'nullable|max:65535'
+        ], 
+        [
+            'title.required' => 'Il titolo è obbligatorio',
+            'title.max' => 'Il titolo non può essere superiore a :max caratteri',
+            'description.max' => 'La descrizione deve avere massimo :max caratteri',
+            'thumb.max' => 'L\'URL deve avere massimo :max caratteri',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'price.digits' => 'Il prezzo deve avere al massimo 2 numeri interi',
+            'price.decimals' => 'Il numero deve avere al massimo 2 decimali',
+            'series.required' => 'La serie è obbligatoria',
+            'series.max' => 'La serie deve avere al massimo di :max caratteri',
+            'sale_date.required' => 'La data di uscita è obbligatoria',
+            'sale_date.max' => 'La data di uscita deve avere massimo :max caratteri',
+            'type.required' => 'Un tipo deve essere selezionato',
+            'type.max' => 'Il tipo non deve essere più lungo di :max caratteri',
+            'artists.max' => 'Il campo non deve essere più lungo di :max caratteri',
+            'writers.max' => 'Il campo non deve essere più lungo di :max caratteri',
+        ])->validate();
     }
 }
